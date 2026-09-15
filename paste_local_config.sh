@@ -21,17 +21,17 @@ pack_bash() {
 }
 
 pack_zsh() {
-    echo "[zsh] 打包 .oh-my-zsh .zshrc .zsh_aliases .p10k.zsh (排除 cache)"
+    echo "[zsh] 打包 .oh-my-zsh .zshrc .zshenv .zsh_aliases .p10k.zsh (排除 cache)"
     tar cf "$SCRIPT_DIR/zsh/zsh_dotfile.tar" \
         -C "$H" \
         --exclude-vcs \
         --exclude='.oh-my-zsh/cache/*' \
-        .oh-my-zsh .zshrc .zsh_aliases .p10k.zsh 2>/dev/null || {
+        .oh-my-zsh .zshrc .zshenv .zsh_aliases .p10k.zsh 2>/dev/null || {
         tar cf "$SCRIPT_DIR/zsh/zsh_dotfile.tar" \
             -C "$H" \
             --exclude='*.git*' \
             --exclude='.oh-my-zsh/cache/*' \
-            .oh-my-zsh .zshrc .zsh_aliases .p10k.zsh
+            .oh-my-zsh .zshrc .zshenv .zsh_aliases .p10k.zsh
     }
 }
 
