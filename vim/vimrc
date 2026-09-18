@@ -81,6 +81,9 @@ set smartcase
 " Highlight search results
 set hlsearch
 
+" Display [match_num/matchsum]
+set shortmess-=S
+
 " Makes search act like search in modern browsers
 set incsearch
 
